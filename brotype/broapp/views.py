@@ -13,8 +13,10 @@ def add(request):
     if request.POST:
         name=request.POST.get('name')
         place=request.POST.get('place')
+        position=request.POST.get('position')
         number=request.POST.get('age')
-        objects=De(name=name,place=place,age=number)
+        mobile=request.POST.get('mobile')
+        objects=De(name=name,place=place,age=number,mobile=mobile,position=position)
         objects.save()
         return redirect('home')
     return render(request,'add.html')
@@ -31,10 +33,14 @@ def edit(request,id):
     if request.POST:
         name=request.POST.get('name')
         place=request.POST.get('place')
+        position=request.POST.get('position')
         no=request.POST.get('age')
+        mobile=request.POST.get('mobile')
         boj.name=name
         boj.place=place
+        boj.position=position
         boj.age=no
+        boj.mobile=mobile
         boj.save()
         return redirect('home')
     form=DeForm(instance=boj)

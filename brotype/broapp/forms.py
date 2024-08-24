@@ -4,4 +4,4 @@ from django.forms import ModelForm
 class DeForm(ModelForm):
     class Meta:
         model = De
-        fields = ['name','place','age']
+        fields = "__all__"

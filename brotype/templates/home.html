@@ -18,19 +18,15 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">Employee Details</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
+             
               <li class="nav-item">
-                <a class="nav-link active" href="#">Home
-                  <span class="visually-hidden">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'add'%}">Add data</a>
+                <a class="nav-link" href="{%url 'add'%}">Register</a>
               </li>
             </div>   
         </div>
@@ -45,7 +41,9 @@
             
             <th scope="col">NAME</th>
             <th scope="col">PLACE</th>
+            <th scope="col">POSITION</th>
             <th scope="col">AGE</th>
+            <th scope="col">MOBILE</th>
             <th scope="col">UPDATE</th>
           </tr> 
         </thead>
@@ -55,7 +53,9 @@
            
             <td>{{ob.name|title}}</td>
             <td>{{ob.place|title}}</td>
+            <td>{{ob.position|title}}</td>
             <td>{{ob.age}}</td>
+            <td>{{ob.mobile}}</td>
             <td><div class="btn-group">
               <a href="{% url 'edit' ob.id %}" class="btn btn-primary">Edit</a>
               <a href="{% url 'delete' ob.id %}" class="btn btn-primary">Delete</a>
